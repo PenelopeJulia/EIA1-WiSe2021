@@ -1,0 +1,143 @@
+body {
+  background-image: url("/images/bg.png");
+  background-repeat: repeat;
+  font-family: sans-serif, Arial, Helvetica;
+  border-width: 800px;
+
+}
+
+a{
+text-decoration: none;
+color: white;
+}
+
+#nav li{
+  background-color: black;
+  font-family: sans-serif, Arial, Helvetica;float: right;
+  text-decoration: none;
+  color:white;
+  display: inline;
+  list-style-type: none;
+  border: 3px solid black;
+  border-radius:1px; 
+  padding: 5px 10px;
+  margin: 400px 200px 0px -200px;
+}
+
+#box1 {
+background-color: #a72121;
+width: 800px;
+height: 800px;
+border-radius: 400px;
+margin-top: -900px;
+margin-left: auto;
+margin-right:auto
+}
+
+h1{
+  font-family: sans-serif;
+  font-size:20px;
+  text-align: center;
+  font-weight: bolder;
+  color: black;
+  padding: 20px 40px;
+  margin: 500px 200px 0px -200px;
+}
+
+#titel {
+  font-family: sans-serif;
+  font-size: 110px;
+  font-weight: bolder;
+  text-align: center;
+  color:white;
+  letter-spacing: -10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin: -575px -320px 0px 320px;
+}
+#titel2 {
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: left;
+  color:white;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin: 390px -235px 0px 235px;
+}
+
+#text{
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
+  color: white;
+  float:right;
+  padding: 5px 200px;
+  margin: -60px -60px 0px 60px;
+}
+
+
+a:hover{
+  color:#a72121;
+}
+
+#icon img{
+    width: 30px;
+    display:block;
+    padding: 5px 200px;
+    margin: -20px -60px 0px 60px;
+    opacity: 70%;    
+}
+
+#icon img:hover{
+  opacity: 1;
+}
+
+#foto {
+font-size: 25px;
+margin-left: -722px;
+color: #a72121;
+}
+
+#animation {
+  font-size: 25px;
+  margin-left: -640px;
+  color:#a72121;
+  }
+
+.flex {
+text-align: center;
+padding-top: 150px;
+padding-bottom: 20px;
+}
+
+#about{
+  font-size: 25px;
+  margin: 2000px 50px 50px 50px;
+  color:#a72121;
+}
+
+#contact{
+font-family: sans-serif, Arial, Helvetica;
+color: #a72121;
+margin-top:350px;
+margin-left: 350px;
+}
+
+.data{
+color:grey;
+}
+.data a{
+  text-decoration: underline;
+}
+
+input{
+  font-family: sans-serif, Arial, Helvetica;
+  color: white;
+}
+
+button {
+  font-family: sans-serif, Arial, Helvetica;
+  color: white;
+}
