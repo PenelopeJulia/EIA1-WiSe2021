@@ -46,14 +46,14 @@ h1{
 
 #titel {
   font-family: sans-serif;
-  font-size: 110px;
+  font-size: 115px;
   font-weight: bolder;
   text-align: center;
   color:white;
   letter-spacing: -10px;
   padding-top: 10px;
   padding-left: 10px;
-  margin: -575px -320px 0px 320px;
+  margin: -550px -320px 0px 320px;
 }
 #titel2 {
   font-family: sans-serif;
@@ -63,7 +63,7 @@ h1{
   color:white;
   padding-top: 20px;
   padding-left: 20px;
-  margin: 390px -235px 0px 235px;
+  margin: 430px -235px 0px 235px;
 }
 
 #text{
