@@ -20,7 +20,7 @@ color: white;
   list-style-type: none;
   border: 3px solid black;
   border-radius:1px; 
-  padding: 5px 10px;
+  padding: 5px 5px;
   margin: 400px 200px 0px -200px;
 }
 
@@ -51,9 +51,8 @@ h1{
   text-align: center;
   color:white;
   letter-spacing: -10px;
-  padding-top: 10px;
-  padding-left: 10px;
-  margin: -550px -320px 0px 320px;
+  padding: 0 -20 0 20px;
+  margin: -550px 0px 0px 0px;
 }
 #titel2 {
   font-family: sans-serif;
