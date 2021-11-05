@@ -1,0 +1,29 @@
+body {
+background-image: url("Station_8_Youtube/images/bg.png");
+background-repeat: repeat;
+font-family: serif;
+}
+
+.wrapper{
+    background-image: url("Station_8_Youtube/images/wrapperbg.png");
+    width: 600px;
+    height: 400px;
+    position: relative;
+    margin: 200px auto;  
+    z-index: 0;
+}
+
+.video {
+position: absolute;
+width: 550px;
+height: 350px;
+top: 25px;
+left: 25px;
+
+}
+
+img {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
