@@ -1,0 +1,44 @@
+body { 
+    background-image: url("Station_1_Positionierung/images/bg.png");
+    background-repeat: repeat;
+    font-family: serif;
+}
+
+.wrapper {
+    background-image: url("Station_1_Positionierung/images/wrapperbg.png");
+    width: 600px;
+    height: 400px;
+    position: relative;
+    margin: 200px auto;  
+}
+
+.title {
+    font-family: serif;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    top: 60px;
+    left: 61px;
+}
+
+.text {
+    font-family: serif;
+    font-size: px;
+    color: white;
+    position: relative;
+    top: 60px;
+    left: 61px;
+    text-indent: 0cm;
+}
+
+.busch { 
+    position: absolute;
+    top: -50px;
+    left: -72px;
+}
+
+.penguin {
+    position: absolute;
+    bottom: -15px;
+   right:-10px;
+}
