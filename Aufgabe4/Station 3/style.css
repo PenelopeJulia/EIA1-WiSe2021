@@ -1,0 +1,50 @@
+body{
+    background-image: url("Station_3_Hover/images/bg.png");
+    background-repeat: repeat;
+    font-family: serif;
+}
+
+.wrapper {
+    background-image: url("Station_3_Hover/images/wrapperbg.png");
+    width: 600px;
+    height: 400px;
+    position: relative;
+    margin: 200px auto;  
+}
+
+.titel {
+    font-family: serif;
+    font-size: 15px;
+    color: white;
+    position: absolute;
+    top: 45px;
+    left: 50px;
+}
+
+.stern1 {
+    position: absolute;
+    top: 210px;
+    left: 50px;
+}
+
+.stern2 {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+
+.stern3 {
+    position: absolute;
+    bottom: 62px;
+    left: 249px;
+}
+
+.stern4 {
+    position: absolute;
+    bottom: 131px;
+    right: 115px;
+}
+
+img:hover {
+    background-image: url("Station_3_Hover/images/stern_hover.png");
+}
