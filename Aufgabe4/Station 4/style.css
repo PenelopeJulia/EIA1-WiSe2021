@@ -1,0 +1,40 @@
+body {
+    background-image: url("Station_4_Fonts/images/bg.png");
+    background-repeat: repeat;
+    font-family: christmas-font; 
+}
+
+.wrapper {
+    background-image: url("Station_4_Fonts/images/wrapperbg.png");
+    width: 600px;
+    height: 400px;
+    position: relative;
+    margin: 200px auto;  
+}
+
+@font-face {
+    font-family: christmas-font;
+    src: url("Station_4_Fonts/fonts/christmas-webfont.woff")
+}
+
+ .title {
+    font-family: christmas-font;
+    font-size: 40px;
+    color:rgb(102, 9, 102);
+    position: relative;
+    top: 25px;
+    left: 30px;
+}
+
+.text {
+    font-family: christmas-font;
+    font-size: 25px;
+    color:rgb(102, 9, 102);
+    position: relative;
+    top: -70px;
+    left: 60px;
+}
+
+a:hover {
+    color:rgb(68, 94, 16);
+}

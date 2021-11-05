@@ -1,0 +1,26 @@
+body {
+    background-image: url("Hintergrund2.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+    position: absolute;
+   margin: 200px auto;
+   left: 170px;
+   
+}
+
+a {
+    background-color: rgb(57, 175, 57);
+    text-decoration: none;
+    font-size: 38px;
+    padding: 10px 20px;
+    margin: 15px;
+    border-radius: 30px;
+    text-align: center;
+    color:ghostwhite;
+}
+
+a:hover {
+    color: rgb(119, 8, 8);
+}

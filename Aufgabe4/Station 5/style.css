@@ -1,0 +1,31 @@
+body {
+    background-image: url("Station_5_Forms/images/bg.png");
+    background-repeat: repeat;
+    font-family: serif;
+}
+
+.wrapper {
+    background-image: url("Station_5_Forms/images/wrapperbg.png");
+    width: 600px;
+    height: 400px;
+    position: relative;
+    margin: 200px auto;  
+}
+
+.titel {
+    font-family: serif;
+    font-size: 18px;
+    color: white;
+    position: relative;
+    left: 50px;
+    top: 60px;
+}
+
+.forms {
+    font-family: serif;
+    font-size: 15px;
+    color: white;
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
