@@ -93,7 +93,7 @@ button:hover {
   opacity: 60%;
 }
 
-/*Flowchart - Link*/
+/*Flowchart - Link + Hover*/
 a {
     color: #ffffff;
     font-family:Verdana, Tahoma, sans-serif;
@@ -104,3 +104,6 @@ a {
     transform: translate(-50%,-50%); 
 }
 
+a:hover {
+    opacity: 60%;
+}
