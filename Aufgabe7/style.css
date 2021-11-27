@@ -1,0 +1,106 @@
+body {
+    background-color: black;
+}
+
+/*Positionierung*/
+.drumpad {
+    width: 460px;
+    height: 460px;
+    position: absolute;
+    margin:0;
+    top: 30%;
+    left:50%;
+    margin-right:-50%;
+    transform: translate(-50%,-50%); 
+}
+
+/* Buttons*/
+#drums {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #1E90FF; 
+}
+
+#drums2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #1E90FF;
+}
+
+#drums3 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color:  #1E90FF;
+}
+
+#sound {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF34B3;
+}
+
+#sound2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF34B3;
+}
+
+#sound3 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF34B3;
+}
+
+#sound4 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF34B3;
+}
+
+#laughter {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF7F24;
+}
+
+#laughter2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF7F24;
+}
+
+/*Play-Button Positionierung*/
+img {
+  padding: 0px;
+  margin-left: 160px;
+}
+
+/*Buttons & Play-Button Hover*/
+button:hover {
+    opacity: 60%;
+   }
+
+   img:hover {
+  opacity: 60%;
+}
+
+/*Flowchart - Link*/
+a {
+    color: #ffffff;
+    font-family:Verdana, Tahoma, sans-serif;
+    text-decoration: none;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+}
+
