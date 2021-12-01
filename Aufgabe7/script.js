@@ -11,6 +11,7 @@ var A7;
     var sound8 = new Audio('assets/laugh-1.mp3');
     var sound9 = new Audio('assets/laugh-2.mp3');
     // Play-Button-Array
+    var count = 0;
     var button = [sound5, sound6, sound7];
     // Sounds - Funktion 
     function playSample(sound) {
@@ -28,9 +29,12 @@ var A7;
     document.querySelector('#laughter2').addEventListener('click', function () { playSample(sound9); });
     //Play-Button Funktion
     function playButton() {
-        setInterval(function () { button[0].play(); }, 500);
-        setInterval(function () { button[1].play(); }, 1000);
-        setInterval(function () { button[2].play(); }, 1500);
+        setInterval(function () {
+            button[count++].play();
+            if (count == 2) {
+                count = 0;
+            }
+        }, 500);
     }
     //Play-Button-Event
     document.querySelector('#playButton').addEventListener('click', playButton);

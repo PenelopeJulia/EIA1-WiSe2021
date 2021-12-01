@@ -12,6 +12,7 @@ var sound8:HTMLAudioElement = new Audio ('assets/laugh-1.mp3')
 var sound9:HTMLAudioElement = new Audio ('assets/laugh-2.mp3')  
 
 // Play-Button-Array
+var count: number = 0;
 var button: HTMLAudioElement [] = [sound5, sound6, sound7]
 
 // Sounds - Funktion 
@@ -33,9 +34,12 @@ document.querySelector('#laughter2').addEventListener('click', function(){ playS
 
 //Play-Button Funktion
  function playButton(): void {
-    setInterval(function() { button[0].play();}, 500);
-    setInterval(function() { button[1].play();}, 1000);
-    setInterval(function() { button[2].play();}, 1500);
+    setInterval(function() {
+        button [count++].play();
+    if (count==2){
+        count=0}
+       }, 500);
+  
 }
 
 //Play-Button-Event
