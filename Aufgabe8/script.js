@@ -12,7 +12,6 @@ var A8;
     var sound9 = new Audio("assets/laugh-2.mp3");
     var currentlyPlaying = true;
     var remix;
-    var beatDelete = [0];
     // Play-Button-Array
     var count = 0;
     var beat = [sound5, sound6, sound7, sound6, sound, sound2, sound3, sound4, sound8, sound9];
@@ -32,31 +31,31 @@ var A8;
     document.querySelector("#laughter2").addEventListener("mousedown", function () { playSample(sound9); });
     //Play-Button Funktion: Beat wird abgespielt bei Klick auf Play
     function playBeat() {
-        setInterval(function () {
-            beat[count++].play();
-            if (count == 4) {
-                count = 0;
-            } //loop
-        }, 500);
-        //Bei Klick auf den Play-Button (if) verwandelt er sich in ein Pause-Button und (else) umgekehrt
-        if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
-            document.querySelector("#play").setAttribute("class", "far fa-pause-circle");
-            currentlyPlaying = true;
-        }
-        else {
-            document.querySelector("#play").setAttribute("class", "far fa-play-circle");
-            clearInterval(beatDelete);
-            currentlyPlaying = false;
+        if (currentlyPlaying == true) {
+            setInterval(function () {
+                beat[count++].play();
+                if (count == 4) {
+                    count = 0;
+                } //loop
+            }, 500);
+            //Bei Klick auf den Play-Button (if) verwandelt er sich in ein Pause-Button und (else) umgekehrt
+            if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
+                document.querySelector("#play").setAttribute("class", "far fa-pause-circle");
+                currentlyPlaying = true;
+            }
+            else {
+                document.querySelector("#play").setAttribute("class", "far fa-play-circle");
+                currentlyPlaying = false;
+            }
         }
     }
     function pauseBeat() {
         currentlyPlaying = false;
-        clearInterval(beatDelete);
     }
     //Delete-Button Funktion: Bei Klick auf das "Trashcan"-Icon wird der abgespielte Beat gelöscht
     function deleteBeat() {
         if (currentlyPlaying == true) {
-            clearInterval(beatDelete);
+            currentlyPlaying = false;
         }
         //Wird der momentane Beat gelöscht, ändert sich der Pause-Button in ein Play-Button
         document.querySelector("#play").setAttribute("class", "far fa-play-circle");
@@ -72,7 +71,7 @@ var A8;
         }
     }
     //Play-, Pause-, Shuffle-, Record-, Delete-Button Klick-Event
-    document.querySelector("#play").addEventListener("mousedown", playBeat);
+    document.querySelector("#play").addEventListener("mousedown", function () { playBeat(true); });
     document.querySelector("#remix").addEventListener("click", function () { remixButton(); });
     //document.querySelector("#record").addEventListener("klick", recordButton);;
     document.querySelector("#delete").addEventListener("klick", deleteBeat);
