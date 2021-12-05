@@ -90,15 +90,6 @@ body {
 
 }
 
-.pause {
-    color: #a1a1a1;
-    font-size: 100px;
-    position: absolute;
-    left: 230px;
-    top: 520px;
-    transform: translate(-50%,-50%); 
-}
-
 #remix {
     color: #a1a1a1;
     font-size: 80px;
@@ -108,14 +99,23 @@ body {
     transform: translate(-50%,-50%); 
 }
 
-.record {
+/*#pause {
+    color: #a1a1a1;
+    font-size: 100px;
+    position: absolute;
+    left: 230px;
+    top: 520px;
+    transform: translate(-50%,-50%); 
+}
+
+#record {
      color: #a1a1a1;
      font-size: 80px;
      position: absolute;
      left: 100px;
      top: 520px;
      transform: translate(-50%,-50%); 
-}
+}*/
 
 #delete {
     color: #a1a1a1; 
