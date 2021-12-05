@@ -13,7 +13,7 @@ var sound9: HTMLAudioElement = new Audio ("assets/laugh-2.mp3");
 
 var currentlyPlaying: boolean = false;
 var remix: number;
-var beatDelete: number = setInterval("deleteBeat", 600);
+var beatDelete: number;
 
 // Play-Button-Array
 var count: number = 0;
@@ -65,7 +65,6 @@ function pauseBeat (): void {
 function deleteBeat(): void {
    if (currentlyPlaying == true) {
        clearInterval(beatDelete);
-       console.log("löschen");
    }
    //Wird der momentane Beat gelöscht, ändert sich der Pause-Button in ein Play-Button
    document.querySelector("#play").setAttribute("class", "far fa-play-circle");
