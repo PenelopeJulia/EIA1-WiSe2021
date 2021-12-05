@@ -71,6 +71,6 @@ var A8;
     //Play-, Pause-, Shuffle-, Record-, Delete-Button Klick-Event
     document.querySelector("#play").addEventListener("mousedown", function () { playBeat(); currentlyPlaying = true; });
     document.querySelector("#remix").addEventListener("click", function () { remixButton(); });
-    document.querySelector("#delete").addEventListener("click", function () { deleteBeat(); currentlyPlaying = true; });
+    document.querySelector("#delete").addEventListener("click", function () { deleteBeat(); currentlyPlaying = false; });
 })(A8 || (A8 = {}));
 //# sourceMappingURL=script.js.map

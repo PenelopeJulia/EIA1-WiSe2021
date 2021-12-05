@@ -83,5 +83,5 @@ function remixButton(): void {
 //Play-, Pause-, Shuffle-, Record-, Delete-Button Klick-Event
 document.querySelector("#play").addEventListener("mousedown", function (): void {playBeat (); currentlyPlaying = true; });
 document.querySelector("#remix").addEventListener("click", function (): void {remixButton(); });
-document.querySelector("#delete").addEventListener("click", function(): void {deleteBeat(); currentlyPlaying = true; });
+document.querySelector("#delete").addEventListener("click", function(): void {deleteBeat(); currentlyPlaying = false; });
 }
