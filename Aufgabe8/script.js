@@ -10,9 +10,9 @@ var A8;
     var sound7 = new Audio("assets/snare.mp3");
     var sound8 = new Audio("assets/laugh-1.mp3");
     var sound9 = new Audio("assets/laugh-2.mp3");
-    var currentlyPlaying = false;
+    var currentlyPlaying = true;
     var remix;
-    var beatDelete;
+    var beatDelete = [0];
     // Play-Button-Array
     var count = 0;
     var beat = [sound5, sound6, sound7, sound6, sound, sound2, sound3, sound4, sound8, sound9];

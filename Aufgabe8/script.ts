@@ -11,9 +11,9 @@ var sound7: HTMLAudioElement = new Audio ("assets/snare.mp3");
 var sound8: HTMLAudioElement = new Audio ("assets/laugh-1.mp3");  
 var sound9: HTMLAudioElement = new Audio ("assets/laugh-2.mp3");  
 
-var currentlyPlaying: boolean = false;
+var currentlyPlaying: boolean = true;
 var remix: number;
-var beatDelete: number;
+var beatDelete: number [] = [ 0 ];
 
 // Play-Button-Array
 var count: number = 0;
@@ -42,7 +42,7 @@ function playBeat(): void {
         beat [count++].play();
         if (count == 4) {
         count = 0; } //loop
-       },       500);
+       },                    500);
 
     //Bei Klick auf den Play-Button (if) verwandelt er sich in ein Pause-Button und (else) umgekehrt
     if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
@@ -65,6 +65,7 @@ function pauseBeat (): void {
 function deleteBeat(): void {
    if (currentlyPlaying == true) {
        clearInterval(beatDelete);
+       
    }
    //Wird der momentane Beat gelöscht, ändert sich der Pause-Button in ein Play-Button
    document.querySelector("#play").setAttribute("class", "far fa-play-circle");
