@@ -1,0 +1,141 @@
+body {
+    background-color: black;
+}
+
+/*Positionierung*/
+.drumpad {
+    width: 460px;
+    height: 460px;
+    position: absolute;
+    margin:0;
+    top: 35%;
+    left:50%;
+    margin-right:-50%;
+    transform: translate(-50%,-50%); 
+}
+
+/* Buttons*/
+#drums {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #1E90FF; 
+}
+
+#drums2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #1E90FF;
+}
+
+#drums3 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color:  #1E90FF;
+}
+
+#sound {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF34B3;
+}
+
+#sound2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF34B3;
+}
+
+#sound3 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF34B3;
+}
+
+#sound4 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF34B3;
+}
+
+#laughter {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF7F24;
+}
+
+#laughter2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #FF7F24;
+}
+
+/*Play/Pause/Record/Delete-Button Positionierung*/
+
+#play {
+    color: #a1a1a1; 
+    font-size: 100px;
+    position: absolute;
+    left: 230px;
+    top: 520px;
+    transform: translate(-50%,-50%); 
+
+}
+
+.pause {
+    color: #a1a1a1;
+    font-size: 100px;
+    position: absolute;
+    left: 230px;
+    top: 520px;
+    transform: translate(-50%,-50%); 
+}
+
+#remix {
+    color: #a1a1a1;
+    font-size: 80px;
+    position: absolute;
+    left: 80px;
+    top: 520px;
+    transform: translate(-50%,-50%); 
+}
+
+.record {
+     color: #a1a1a1;
+     font-size: 80px;
+     position: absolute;
+     left: 100px;
+     top: 520px;
+     transform: translate(-50%,-50%); 
+}
+
+#delete {
+    color: #a1a1a1; 
+    font-size: 80px;
+    position: absolute;
+    left: 380px;
+    top: 520px;
+    transform: translate(-50%,-50%); 
+}
+
+/*Buttons Hover*/
+button:hover {
+    opacity: 60%;
+   
+}
+
+a:hover {
+    opacity: 50%;
+}
+
+/*i:hover {
+    opacity: 50%;
+}
