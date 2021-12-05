@@ -13,6 +13,7 @@ var sound9: HTMLAudioElement = new Audio ("assets/laugh-2.mp3");
 
 var currentlyPlaying: boolean = true;
 var remix: number;
+var beatDelete: number;
 
 // Play-Button-Array
 var count: number = 0;
@@ -37,11 +38,11 @@ document.querySelector("#laughter2").addEventListener("mousedown", function(): v
 //Play-Button Funktion: Beat wird abgespielt bei Klick auf Play
 function playBeat(): void {
      if (currentlyPlaying == true) {
-    setInterval(function(): void {
+    beatDelete = setInterval(function(): void {
         beat [count++].play();
         if (count == 4) {
         count = 0; } //loop
-       },       500);
+       },                    500);
 
     //Bei Klick auf den Play-Button (if) verwandelt er sich in ein Pause-Button und (else) umgekehrt
     if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
@@ -51,27 +52,25 @@ function playBeat(): void {
     else {
         document.querySelector("#play").setAttribute("class", "far fa-play-circle");
         currentlyPlaying = false;
+        clearInterval(beatDelete);
     }
 }
-}
-
-function pauseBeat (): void {
-    currentlyPlaying = false;
 }
 
 //Delete-Button Funktion: Bei Klick auf das "Trashcan"-Icon wird der abgespielte Beat gelöscht
 function deleteBeat(): void {
    if (currentlyPlaying == true) {
     currentlyPlaying = false;
-       
+     //Wird der momentane Beat gelöscht, ändert sich der Pause-Button in ein Play-Button
+    document.querySelector("#play").setAttribute("class", "far fa-play-circle");   
    }
-   //Wird der momentane Beat gelöscht, ändert sich der Pause-Button in ein Play-Button
-   document.querySelector("#play").setAttribute("class", "far fa-play-circle");
+
 }
 
 // Remix-Button Funktion: Bei Klick aud das Shuffle-Icon wird ein zufällig-generierter Beat abgespielt
 function remixButton(): void {
     remix = setInterval(startRemix, 600);
+
     function startRemix(): void {
     for (var i: number = 0; i <= 9; i++) {
         const f: number = Math.floor(Math.random() * 5);
@@ -81,9 +80,8 @@ function remixButton(): void {
 }
 
 //Play-, Pause-, Shuffle-, Record-, Delete-Button Klick-Event
-document.querySelector("#play").addEventListener("mousedown", function (): void {playBeat (true); });
+document.querySelector("#play").addEventListener("mousedown", function (): void {playBeat (); });
 document.querySelector("#remix").addEventListener("click", function (): void {remixButton(); });
-//document.querySelector("#record").addEventListener("klick", recordButton);;
 document.querySelector("#delete").addEventListener("klick", deleteBeat);
 }
 
