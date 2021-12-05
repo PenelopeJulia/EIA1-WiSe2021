@@ -1,35 +1,35 @@
 var A8;
 (function (A8) {
     //Sound-Variablen
-    var sound = new Audio("assets/A.mp3");
-    var sound2 = new Audio("assets/C.mp3");
-    var sound3 = new Audio("assets/F.mp3");
-    var sound4 = new Audio("assets/G.mp3");
-    var sound5 = new Audio("assets/hihat.mp3");
-    var sound6 = new Audio("assets/kick.mp3");
-    var sound7 = new Audio("assets/snare.mp3");
-    var sound8 = new Audio("assets/laugh-1.mp3");
-    var sound9 = new Audio("assets/laugh-2.mp3");
+    var sound = [new Audio("assets/A.mp3"),
+        new Audio("assets/C.mp3"),
+        new Audio("assets/F.mp3"),
+        new Audio("assets/G.mp3"),
+        new Audio("assets/hihat.mp3"),
+        new Audio("assets/kick.mp3"),
+        new Audio("assets/snare.mp3"),
+        new Audio("assets/laugh-1.mp3"),
+        new Audio("assets/laugh-2.mp3")];
     var currentlyPlaying = true;
     var remix;
     var beatDelete;
     // Play-Button-Array
     var count = 0;
-    var beat = [sound5, sound6, sound7, sound6, sound, sound2, sound3, sound4, sound8, sound9];
+    var beat = [sound[4], sound[5], sound[6], sound[0], sound[1], sound[2], sound[3], sound[7], sound[8]];
     // Sounds - Funktion 
     function playSample(sound) {
         sound.play();
     }
     // Klick-Event
-    document.querySelector("#drums").addEventListener("mousedown", function () { playSample(sound5); });
-    document.querySelector("#drums2").addEventListener("mousedown", function () { playSample(sound6); });
-    document.querySelector("#drums3").addEventListener("mousedown", function () { playSample(sound7); });
-    document.querySelector("#sound").addEventListener("mousedown", function () { playSample(sound); });
-    document.querySelector("#sound2").addEventListener("mousedown", function () { playSample(sound2); });
-    document.querySelector("#sound3").addEventListener("mousedown", function () { playSample(sound3); });
-    document.querySelector("#sound4").addEventListener("mousedown", function () { playSample(sound4); });
-    document.querySelector("#laughter").addEventListener("mousedown", function () { playSample(sound8); });
-    document.querySelector("#laughter2").addEventListener("mousedown", function () { playSample(sound9); });
+    document.querySelector("#drums").addEventListener("mousedown", function () { playSample(sound[5]); });
+    document.querySelector("#drums2").addEventListener("mousedown", function () { playSample(sound[6]); });
+    document.querySelector("#drums3").addEventListener("mousedown", function () { playSample(sound[7]); });
+    document.querySelector("#sound").addEventListener("mousedown", function () { playSample(sound[0]); });
+    document.querySelector("#sound2").addEventListener("mousedown", function () { playSample(sound[2]); });
+    document.querySelector("#sound3").addEventListener("mousedown", function () { playSample(sound[3]); });
+    document.querySelector("#sound4").addEventListener("mousedown", function () { playSample(sound[4]); });
+    document.querySelector("#laughter").addEventListener("mousedown", function () { playSample(sound[8]); });
+    document.querySelector("#laughter2").addEventListener("mousedown", function () { playSample(sound[9]); });
     //Play-Button Funktion: Beat wird abgespielt bei Klick auf Play
     function playBeat() {
         if (currentlyPlaying == true) {

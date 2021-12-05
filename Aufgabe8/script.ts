@@ -1,15 +1,16 @@
 namespace A8 {
 
 //Sound-Variablen
-var sound: HTMLAudioElement = new Audio ("assets/A.mp3");  
-var sound2: HTMLAudioElement = new Audio ("assets/C.mp3");  
-var sound3: HTMLAudioElement = new Audio ("assets/F.mp3"); 
-var sound4: HTMLAudioElement = new Audio ("assets/G.mp3"); 
-var sound5: HTMLAudioElement = new Audio ("assets/hihat.mp3"); 
-var sound6: HTMLAudioElement = new Audio ("assets/kick.mp3");
-var sound7: HTMLAudioElement = new Audio ("assets/snare.mp3");  
-var sound8: HTMLAudioElement = new Audio ("assets/laugh-1.mp3");  
-var sound9: HTMLAudioElement = new Audio ("assets/laugh-2.mp3");  
+var sound: HTMLAudioElement [] = 
+    [new Audio ("assets/A.mp3"),
+    new Audio ("assets/C.mp3"), 
+    new Audio ("assets/F.mp3"),
+    new Audio ("assets/G.mp3"),
+    new Audio ("assets/hihat.mp3"),
+    new Audio ("assets/kick.mp3"),
+    new Audio ("assets/snare.mp3"), 
+    new Audio ("assets/laugh-1.mp3"),
+    new Audio ("assets/laugh-2.mp3")];  
 
 var currentlyPlaying: boolean = true;
 var remix: number;
@@ -17,7 +18,7 @@ var beatDelete: number;
 
 // Play-Button-Array
 var count: number = 0;
-var beat: HTMLAudioElement [] = [sound5, sound6, sound7, sound6, sound, sound2, sound3, sound4, sound8, sound9];
+var beat: HTMLAudioElement [] = [sound[4], sound[5], sound[6], sound[0], sound[1], sound[2], sound[3], sound[7], sound[8]];
 
 // Sounds - Funktion 
 function playSample(sound: HTMLAudioElement): void {
@@ -25,15 +26,15 @@ function playSample(sound: HTMLAudioElement): void {
 }
 
 // Klick-Event
-document.querySelector("#drums").addEventListener("mousedown", function(): void { playSample (sound5); });
-document.querySelector("#drums2").addEventListener("mousedown", function(): void { playSample (sound6); });
-document.querySelector("#drums3").addEventListener("mousedown", function (): void { playSample (sound7); });
-document.querySelector("#sound").addEventListener("mousedown", function(): void { playSample (sound); });
-document.querySelector("#sound2").addEventListener("mousedown", function(): void { playSample (sound2); });
-document.querySelector("#sound3").addEventListener("mousedown", function(): void { playSample (sound3); });
-document.querySelector("#sound4").addEventListener("mousedown", function(): void { playSample (sound4); });
-document.querySelector("#laughter").addEventListener("mousedown", function(): void { playSample (sound8); });
-document.querySelector("#laughter2").addEventListener("mousedown", function(): void { playSample (sound9); });
+document.querySelector("#drums").addEventListener("mousedown", function(): void { playSample (sound[5]); });
+document.querySelector("#drums2").addEventListener("mousedown", function(): void { playSample (sound[6]); });
+document.querySelector("#drums3").addEventListener("mousedown", function (): void { playSample (sound[7]); });
+document.querySelector("#sound").addEventListener("mousedown", function(): void { playSample (sound[0]); });
+document.querySelector("#sound2").addEventListener("mousedown", function(): void { playSample (sound[2]); });
+document.querySelector("#sound3").addEventListener("mousedown", function(): void { playSample (sound[3]); });
+document.querySelector("#sound4").addEventListener("mousedown", function(): void { playSample (sound[4]); });
+document.querySelector("#laughter").addEventListener("mousedown", function(): void { playSample (sound[8]); });
+document.querySelector("#laughter2").addEventListener("mousedown", function(): void { playSample (sound[9]); });
 
 //Play-Button Funktion: Beat wird abgespielt bei Klick auf Play
 function playBeat(): void {
