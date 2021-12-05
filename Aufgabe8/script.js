@@ -12,7 +12,7 @@ var A8;
     var sound9 = new Audio("assets/laugh-2.mp3");
     var currentlyPlaying = false;
     var remix;
-    var beatDelete;
+    var beatDelete = setInterval("deleteBeat", 600);
     // Play-Button-Array
     var count = 0;
     var beat = [sound5, sound6, sound7, sound6, sound, sound2, sound3, sound4, sound8, sound9];
@@ -38,43 +38,43 @@ var A8;
                 count = 0;
             } //loop
         }, 500);
-        //Bei Klick auf den Play-Button verwandelt er sich in ein Pause-Button und umgekehrt
+        //Bei Klick auf den Play-Button (if) verwandelt er sich in ein Pause-Button und (else) umgekehrt
         if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
             document.querySelector("#play").setAttribute("class", "far fa-pause-circle");
+            currentlyPlaying = true;
         }
         else {
             document.querySelector("#play").setAttribute("class", "far fa-play-circle");
             clearInterval(beatDelete);
+            currentlyPlaying = false;
         }
+    }
+    function pauseBeat() {
+        currentlyPlaying = false;
+        clearInterval(beatDelete);
     }
     //Delete-Button Funktion: Bei Klick auf das "Trashcan"-Icon wird der abgespielte Beat gelöscht
     function deleteBeat() {
         if (currentlyPlaying == true) {
-            currentlyPlaying = false;
+            clearInterval(beatDelete);
+            console.log("löschen");
         }
         //Wird der momentane Beat gelöscht, ändert sich der Pause-Button in ein Play-Button
         document.querySelector("#play").setAttribute("class", "far fa-play-circle");
     }
-    // Remix-Button Funktion: Bei Klick aud das Shuffle-Icon wird ein zufällig-generiertes Beat abgespielt
+    // Remix-Button Funktion: Bei Klick aud das Shuffle-Icon wird ein zufällig-generierter Beat abgespielt
     function remixButton() {
-        remix = setInterval(startRemix, 200);
+        remix = setInterval(startRemix, 600);
         function startRemix() {
             for (var i = 0; i <= 9; i++) {
-                var b = Math.floor(Math.random() * 5);
-                playSample(sound[b]);
+                var f = Math.floor(Math.random() * 5);
+                playSample(sound[f]);
             }
         }
     }
-    /*function clickRemix() {
-        remix=setInterval(playRemix, 300);
-        function playRemix(){
-            for(var a:number=0; a<4; a++){
-                const b: number = Math.floor(Math.random() * 6);
-                playSample (sound[b]); */
     //Play-, Pause-, Shuffle-, Record-, Delete-Button Klick-Event
     document.querySelector("#play").addEventListener("mousedown", playBeat);
-    document.querySelector("#pause").addEventListener("mousedown", playBeat);
-    document.querySelector("#remix").addEventListener("mousedown", remixButton);
+    document.querySelector("#remix").addEventListener("click", function () { remixButton(); });
     //document.querySelector("#record").addEventListener("klick", recordButton);;
     document.querySelector("#delete").addEventListener("klick", deleteBeat);
 })(A8 || (A8 = {}));
