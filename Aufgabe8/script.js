@@ -35,14 +35,13 @@ var A8;
         if (currentlyPlaying == true) {
             beatDelete = setInterval(function () {
                 beat[count++].play();
-                if (count == 4) {
+                if (count == 3) {
                     count = 0;
                 } //loop
             }, 500);
             //Bei Klick auf den Play-Button (if) verwandelt er sich in ein Pause-Button und (else) umgekehrt
             if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
                 document.querySelector("#play").setAttribute("class", "far fa-pause-circle");
-                currentlyPlaying = true;
             }
             else {
                 document.querySelector("#play").setAttribute("class", "far fa-play-circle");
@@ -64,26 +63,14 @@ var A8;
         remix = setInterval(startRemix, 600);
         function startRemix() {
             for (var i = 0; i <= 9; i++) {
-                var f = Math.floor(Math.random() * 5);
-                playSample(sound[f]);
+                var random = Math.floor(Math.random() * 10);
+                playSample(sound[random]);
             }
         }
     }
     //Play-, Pause-, Shuffle-, Record-, Delete-Button Klick-Event
-    document.querySelector("#play").addEventListener("mousedown", function () { playBeat(); });
+    document.querySelector("#play").addEventListener("mousedown", function () { playBeat(); currentlyPlaying = true; });
     document.querySelector("#remix").addEventListener("click", function () { remixButton(); });
-    document.querySelector("#delete").addEventListener("klick", deleteBeat);
+    document.querySelector("#delete").addEventListener("click", function () { deleteBeat(); currentlyPlaying = true; });
 })(A8 || (A8 = {}));
-//Sound-Variablen als Array Versuch
-/*var sound: HTMLAudioElement [] =
-    [new Audio ("assets/A.mp3"),
-    new Audio ("assets/C.mp3"),
-    new Audio ("assets/F.mp3"),
-    new Audio ("assets/G.mp3"),
-    new Audio ("assets/hihat.mp3"),
-    new Audio ("assets/kick.mp3"),
-    new Audio ("assets/snare.mp3"),
-    new Audio ("assets/laugh-1.mp3"),
-    new Audio ("assets/laugh-2.mp3")];
-*/ 
 //# sourceMappingURL=script.js.map

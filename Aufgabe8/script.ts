@@ -41,14 +41,13 @@ function playBeat(): void {
      if (currentlyPlaying == true) {
     beatDelete = setInterval(function(): void {
         beat [count++].play();
-        if (count == 4) {
+        if (count == 3) {
         count = 0; } //loop
        },                    500);
 
     //Bei Klick auf den Play-Button (if) verwandelt er sich in ein Pause-Button und (else) umgekehrt
     if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
         document.querySelector("#play").setAttribute("class", "far fa-pause-circle");
-        currentlyPlaying = true;
     }
     else {
         document.querySelector("#play").setAttribute("class", "far fa-play-circle");
@@ -60,6 +59,7 @@ function playBeat(): void {
 
 //Delete-Button Funktion: Bei Klick auf das "Trashcan"-Icon wird der abgespielte Beat gelöscht
 function deleteBeat(): void {
+    
    if (currentlyPlaying == true) {
     currentlyPlaying = false;
      //Wird der momentane Beat gelöscht, ändert sich der Pause-Button in ein Play-Button
@@ -70,31 +70,18 @@ function deleteBeat(): void {
 
 // Remix-Button Funktion: Bei Klick aud das Shuffle-Icon wird ein zufällig-generierter Beat abgespielt
 function remixButton(): void {
+    
     remix = setInterval(startRemix, 600);
-
     function startRemix(): void {
     for (var i: number = 0; i <= 9; i++) {
-        const f: number = Math.floor(Math.random() * 5);
-        playSample (sound[f]);
+        const random: number = Math.floor(Math.random() * 10);
+        playSample (sound[random]);
     }
 }
 }
 
 //Play-, Pause-, Shuffle-, Record-, Delete-Button Klick-Event
-document.querySelector("#play").addEventListener("mousedown", function (): void {playBeat (); });
+document.querySelector("#play").addEventListener("mousedown", function (): void {playBeat (); currentlyPlaying = true; });
 document.querySelector("#remix").addEventListener("click", function (): void {remixButton(); });
-document.querySelector("#delete").addEventListener("klick", deleteBeat);
+document.querySelector("#delete").addEventListener("click", function(): void {deleteBeat(); currentlyPlaying = true; });
 }
-
-//Sound-Variablen als Array Versuch
-/*var sound: HTMLAudioElement [] = 
-    [new Audio ("assets/A.mp3"),
-    new Audio ("assets/C.mp3"), 
-    new Audio ("assets/F.mp3"),
-    new Audio ("assets/G.mp3"),
-    new Audio ("assets/hihat.mp3"),
-    new Audio ("assets/kick.mp3"),
-    new Audio ("assets/snare.mp3"), 
-    new Audio ("assets/laugh-1.mp3"),
-    new Audio ("assets/laugh-2.mp3")];  
-*/
