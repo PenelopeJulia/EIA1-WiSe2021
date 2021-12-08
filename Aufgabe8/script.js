@@ -43,17 +43,18 @@ var A8;
             if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
                 document.querySelector("#play").setAttribute("class", "far fa-pause-circle");
             }
-            else {
-                document.querySelector("#play").setAttribute("class", "far fa-play-circle");
-                currentlyPlaying = false;
-                clearInterval(beatDelete);
-            }
+        }
+        else {
+            document.querySelector("#play").setAttribute("class", "far fa-play-circle");
+            currentlyPlaying = false;
+            clearInterval(beatDelete);
         }
     }
     //Delete-Button Funktion: Bei Klick auf das "Trashcan"-Icon wird der abgespielte Beat gelöscht
     function deleteBeat() {
         if (currentlyPlaying == true) {
             currentlyPlaying = false;
+            clearInterval(beatDelete);
             //Wird der momentane Beat gelöscht, ändert sich der Pause-Button in ein Play-Button
             document.querySelector("#play").setAttribute("class", "far fa-play-circle");
         }
@@ -67,6 +68,10 @@ var A8;
                 playSample(sound[random]);
             }
         }
+        //löscht den aktuellen Beat und nur der Remix wird abgespielt
+        clearInterval(beatDelete);
+        //Pause-Button ändert sich in ein Play-Button
+        document.querySelector("#play").setAttribute("class", "far fa-play-circle");
     }
     //Play-, Pause-, Shuffle-, Record-, Delete-Button Klick-Event
     document.querySelector("#play").addEventListener("mousedown", function () { playBeat(); currentlyPlaying = true; });

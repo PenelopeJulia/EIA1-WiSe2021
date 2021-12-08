@@ -49,12 +49,12 @@ function playBeat(): void {
     if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
         document.querySelector("#play").setAttribute("class", "far fa-pause-circle");
     }
+}
     else {
         document.querySelector("#play").setAttribute("class", "far fa-play-circle");
         currentlyPlaying = false;
         clearInterval(beatDelete);
     }
-}
 }
 
 //Delete-Button Funktion: Bei Klick auf das "Trashcan"-Icon wird der abgespielte Beat gelöscht
@@ -62,6 +62,7 @@ function deleteBeat(): void {
     
    if (currentlyPlaying == true) {
     currentlyPlaying = false;
+    clearInterval(beatDelete);
      //Wird der momentane Beat gelöscht, ändert sich der Pause-Button in ein Play-Button
     document.querySelector("#play").setAttribute("class", "far fa-play-circle");   
    }
@@ -69,8 +70,7 @@ function deleteBeat(): void {
 }
 
 // Remix-Button Funktion: Bei Klick aud das Shuffle-Icon wird ein zufällig-generierter Beat abgespielt
-function remixButton(): void {
-    
+function remixButton(): void { 
     remix = setInterval(startRemix, 600);
     function startRemix(): void {
     for (var i: number = 0; i <= 9; i++) {
@@ -78,6 +78,10 @@ function remixButton(): void {
         playSample (sound[random]);
     }
 }
+  //löscht den aktuellen Beat und nur der Remix wird abgespielt
+    clearInterval(beatDelete);
+  //Pause-Button ändert sich in ein Play-Button
+    document.querySelector("#play").setAttribute("class", "far fa-play-circle");  
 }
 
 //Play-, Pause-, Shuffle-, Record-, Delete-Button Klick-Event
