@@ -43,11 +43,11 @@ var A8;
             if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
                 document.querySelector("#play").setAttribute("class", "far fa-pause-circle");
             }
-        }
-        else {
-            document.querySelector("#play").setAttribute("class", "far fa-play-circle");
-            currentlyPlaying = false;
-            clearInterval(beatDelete);
+            else {
+                document.querySelector("#play").setAttribute("class", "far fa-play-circle");
+                currentlyPlaying = false;
+                deleteBeat();
+            }
         }
     }
     //Delete-Button Funktion: Bei Klick auf das "Trashcan"-Icon wird der abgespielte Beat gelöscht
