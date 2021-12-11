@@ -53,9 +53,19 @@ h4 {
 
 #textfield {
     color: #000000;
+    font-size: 16px;
     border: 0px;
    width: 400px;
-   height: 30px;
+   height: 40px;
+}
+
+
+#newDivBox {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;  
+    width: 404px;
+    height: 40px;
 }
 
 /*
