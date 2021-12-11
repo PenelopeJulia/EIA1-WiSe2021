@@ -92,4 +92,3 @@ namespace A8 {
     document.querySelector("#remix").addEventListener("click", function (): void {remixButton(); });
     document.querySelector("#delete").addEventListener("click", function(): void {deleteBeat(); }); 
     }
-    
