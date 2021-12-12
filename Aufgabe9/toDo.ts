@@ -1,149 +1,85 @@
 namespace toDoList {
 
-// HTML-ELemente
+let total: number = 0;
+
+// Auf ID aus HTML zugreifen
 let addTaskBox: HTMLElement = document.getElementById("addTaskBox");
 
-
+// neues Div-Element einbauen, an welches die neuen Taskboxen angehängt werden
 let newDiv: HTMLElement = document.createElement("div");
 
 newDiv.textContent = "";
 
+// newDiv wird an das Eltern-Element addTaskBox gehängt
 addTaskBox.appendChild(newDiv);
 
+// Bei Klick auf das Plus wird die Funktion addNewTask aufgerufen und ausgeführt
 document.querySelector("#addTaskButton").addEventListener("click", addNewTask);
 
+// Input-Element in TS deklarieren
 let input: HTMLInputElement = document.querySelector("#textfield");
 
 //Funktion, die bei Klick auf Plus-Button neues InputText-Element ans Div(addBoxDiv) hängt
-
 function addNewTask (): void {
+
+    // Counter für Taskboxs in total
+    total++; 
+    document.querySelector("#toDoCounter").innerHTML = String( total + " in total");
 
     let textVonEingabefeld;
 
+    // Der Inhalt (textVonEingabefeld) des Input-Felds wird als input.value gespeichert
     if (input.value != "") textVonEingabefeld = input.value;
 
+    // Bei Klick auf das Plus wird das Input-Feld geleert
     input.value = "";
 
+    // Let-Variablen lokal deklarieren
     let addTaskBox = document.getElementById("addTaskBox");
 
     let newDiv = document.createElement("div");
 
+    // Text in newDiv wird an textVonEingabefeld zurückgegeben
     newDiv.textContent = textVonEingabefeld; 
+    
+    // Der newDiv-Container bekommt eine ID
     newDiv.id = "newDivBox";
 
-    //Add event listener, when this clicked.
-    //Delete parent
+    // Erstellen eines Haken-Elementes
+    let haken: HTMLInputElement = document.createElement("input");
 
-    //Create check box
-    let checkbox: HTMLInputElement = document.createElement("input");
+    //Haken-Typ wird deklariert und ein ID zugewiesen
+    haken.type  = "checkbox";
+    haken.id = "checkbox";
 
-    //Declare Type and add checkbox
-    checkbox.type  = "checkbox";
-    checkbox.id = "checkbox";
-
-    //Insert into DOM.
-    newDiv?.appendChild(checkbox);
+    // Haken wird zur neuen Taskbox hinzugefügt
+    newDiv?.appendChild(haken);
     
-    //Add Delete-Button
+    // Erstellen eines Delete-Buttons
     let deleteButton: HTMLElement = document.createElement("button");
 
-    //Add id to Delete-button
+    // dem Delete-Button wird eine Klasse zugewiesen, gestalterische Bearbeitung nun in CSS möglich
     deleteButton.className = "fas fa-times";
-    deleteButton.type = "button"
 
+    // Klickevent für wenn der Delete-Button gedrückt wird
     deleteButton.addEventListener("click", deleteTaskbox);
 
+    // Delete-Funktion
     function deleteTaskbox (): void {
+
+        //neues newDiv-Kinderelement wird bei Klick auf den Delete-Button vom Elternelement entfernt
         newDiv.parentElement.removeChild(newDiv);
+        
+        //Counter für wenn der Delete-Button gedrückt wird, die Total-Number - 1 ist
+        total--;
+        document.querySelector("#toDoCounter").innerHTML = String( total + " in total");
     }
 
+    // Delete-Button wird an neues newDiv-Element gehängt
     newDiv?.appendChild(deleteButton);    
 
     addTaskBox?.appendChild(newDiv);
 
 }
-
-
- 
-
-
-
-/*
-// Bei Klick auf dass Plus-Zeichen wird Text in einem Array gespeichert und 
-function addTaskIfClick (): void {
-console.log("klick");
-
-let taskBox: HTMLDivElement = document.getElementById("taskbox");
-
-*/
-
-
-
-/*
-let liste = document.createElement("li");
-let inputValue = document.getElementById("textfield").value;
-let text = document.createTextNode(inputValue);
-
-liste.appendChild(text);
-
-if (inputValue === "") {
-    alert("Write somthing!");
-} else {
-    document.getElementById("list").appendChild(liste);
-}
-document.getElementById("myInput").value = "";
-
-let addTaskButton = document.getElementById("textfield");
-*/
-
-
-}
-
-
-
-/*
-taskbox.appendChild(textfeld);
-let inputTextfeld;
-
-let input: HTMLInputElement = document.querySelector("#textfield");
-if (input.value != "") inputTextfeld = input.value;
-input.value = "";
-
-}
-
-function deleteTaskbox (): void {
-    
-}
-
-//Interface für Objekt-Array erstellen
-interface taskboxEigenschaften {
-
-
-
-}
-
-//Objekt-Array für Taskbox erstellen (Eigenschaften und Fuktionen?)
-let task: taskboxEigenschaften [] = [
-{
-
-}, 
-{
-    
-}
-
-];
-
-//Taskbox-Zähler   //unvollständig
-/*for (let index: number = 0; index < task.length; index++) {
-    console.log(task[index].name);
-}
-
-
-
-//Bei Klick auf den Add Task-Button wird die Funktion addtaskClick aufgerufen
-document.querySelector("#addTaskButton").addEventListener("mousedown", addTaskIfClick);
-*/
-//EnterTask
-
 
 }
