@@ -75,11 +75,25 @@ function addNewTask (): void {
         document.querySelector("#toDoCounter").innerHTML = String( total + " in total");
     }
 
+    // Reset To-Do-List
+    document.addEventListener("keyup", function (event: KeyboardEvent): void { 
+        if (event.keyCode == 82) {
+            deleteTaskbox();
+        }
+    });
+
     // Delete-Button wird an neues newDiv-Element gehängt
     newDiv?.appendChild(deleteButton);    
 
     addTaskBox?.appendChild(newDiv);
 
 }
+
+document.addEventListener("keydown", function (event: KeyboardEvent): void { 
+    if (event.keyCode == 13) {
+       addNewTask();
+    }
+});
+
 
 }

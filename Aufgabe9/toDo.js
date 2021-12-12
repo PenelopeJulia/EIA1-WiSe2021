@@ -51,9 +51,20 @@ var toDoList;
             total--;
             document.querySelector("#toDoCounter").innerHTML = String(total + " in total");
         }
+        // Reset To-Do-List
+        document.addEventListener("keyup", function (event) {
+            if (event.keyCode == 82) {
+                deleteTaskbox();
+            }
+        });
         // Delete-Button wird an neues newDiv-Element gehängt
         newDiv === null || newDiv === void 0 ? void 0 : newDiv.appendChild(deleteButton);
         addTaskBox === null || addTaskBox === void 0 ? void 0 : addTaskBox.appendChild(newDiv);
     }
+    document.addEventListener("keydown", function (event) {
+        if (event.keyCode == 13) {
+            addNewTask();
+        }
+    });
 })(toDoList || (toDoList = {}));
 //# sourceMappingURL=toDo.js.map
