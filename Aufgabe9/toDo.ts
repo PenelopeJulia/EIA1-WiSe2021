@@ -93,7 +93,7 @@ function addNewTask (): void {
         document.querySelector("#toDoCounter").innerHTML = String( total + " in total");
     }
 
-    // Reset To-Do-List
+    // Reset To-Do-List bei Klick auf F1
     document.addEventListener("keyup", function (event: KeyboardEvent): void { 
         if (event.keyCode == 112) {
             deleteTaskbox();
