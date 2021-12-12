@@ -4,9 +4,8 @@ body {
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
-    font-style: oblique;
     font-size: 80px;
-    color: #e4842a;
+    color: #cc6a0e;
     
 }
 
@@ -20,6 +19,7 @@ h4 {
     left: 130px;
 }
 
+/* Div-Box, in der alles drinsteckt*/
 .toDoList {
     width: 460px;
     height: 460px;
@@ -31,13 +31,15 @@ h4 {
     transform: translate(-20%,-17%); 
 }
 
+/* Div, indem sich die neuen Taskboxen befinden */
 .taskbox {
     position: absolute;
     margin-left: 10%;
     top: 230px;
-    left: -70px;
+    left: -60px;
 }
 
+/* Plus-Button */
 #addTaskButton {
     color: #e4842a;
     font-size: 30px;
@@ -48,13 +50,16 @@ h4 {
     transition: transform .2s;
 }
 
+/* Plus- Button: Hover*/
 #addTaskButton:hover {
     opacity: 70%;
     transform: scale(1.5);
 }
 
+/* Input- Text */
 #textfield {
-    color: #ffd8a6;
+    padding-left: 10px;
+    color: #ad5b0e;
     left: 20px;
     font-size: 20px;
     border: 0px;
@@ -62,34 +67,35 @@ h4 {
     height: 40px;
 }
 
+/* Input-Kasten */
 input {
-    background-color: #e4842a; ;
+    background-color: #eb974a; 
     border-radius: 10px;
-    border: 40px;
-    border-color: #ffbb61;
 }
-
+/* neue Taskbox */
 #newDivBox {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     float: center;
     margin-top: 7px;
-    color: #ffd8a6;
-    background-color: #e4842a; 
+    color: #ad5b0e;
+    background-color: #eb974a;  
     border-radius: 10px;
     width: 404px;
     height: 40px;
 }
 
+/* Text in neuen Taskboxen */
 #text {
-    position: relative;
+    position: absolute;
     font-size: 20px;
-    margin-top: 100%;
+    margin-top: 7px;
     margin-left: 35px;
     margin-bottom: 30px;
     
 }
 
+/* Delete-Button */
 .fa-trash {
     font-size: 20px;
     position: absolute;
@@ -104,7 +110,7 @@ input {
 }
 */
 
-
+/* Kein Haken: Task noch nicht erledigt */
 .fa-circle {
     font-size: 20px;
     position: absolute;
@@ -115,6 +121,7 @@ input {
     opacity : 50%;
 }
 
+/* Haken: Task erledigt */
 .fa-check-circle {
     font-size: 20px;
     position: absolute;
