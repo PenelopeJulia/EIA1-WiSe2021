@@ -65,8 +65,9 @@ var toDoList;
         }
         // Reset To-Do-List
         document.addEventListener("keyup", function (event) {
-            if (event.keyCode == 82) {
+            if (event.keyCode == 112) {
                 deleteTaskbox();
+                input.value = "";
             }
         });
         // Delete-Button wird an neues newDiv-Element gehängt

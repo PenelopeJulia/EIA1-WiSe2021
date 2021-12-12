@@ -95,8 +95,9 @@ function addNewTask (): void {
 
     // Reset To-Do-List
     document.addEventListener("keyup", function (event: KeyboardEvent): void { 
-        if (event.keyCode == 82) {
+        if (event.keyCode == 112) {
             deleteTaskbox();
+            input.value = "";
         }
     });
 
