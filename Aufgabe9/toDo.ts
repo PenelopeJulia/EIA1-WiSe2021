@@ -26,10 +26,13 @@ function addNewTask (): void {
     total++; 
     document.querySelector("#toDoCounter").innerHTML = String( total + " in total");
 
-    let textVonEingabefeld;
+    let textVonEingabefeld: HTMLElement = document.createElement("h7");
 
-    // Der Inhalt (textVonEingabefeld) des Input-Felds wird als input.value gespeichert
-    if (input.value != "") textVonEingabefeld = input.value;
+    textVonEingabefeld.innerHTML = input.value;
+    textVonEingabefeld.id = "text";
+
+    // Wenn Input Text hat, dann wird dieser als textVonEingabefeld gespeichert
+    //if (input.value != "") textVonEingabefeld = input.value;
 
     // Bei Klick auf das Plus wird das Input-Feld geleert
     input.value = "";
@@ -39,28 +42,43 @@ function addNewTask (): void {
 
     let newDiv = document.createElement("div");
 
-    // Text in newDiv wird an textVonEingabefeld zurückgegeben
-    newDiv.textContent = textVonEingabefeld; 
+
+   // Text wird an newDiv bei Klick auf Plus weitergegeben
+    newDiv.appendChild(textVonEingabefeld);
     
     // Der newDiv-Container bekommt eine ID
     newDiv.id = "newDivBox";
 
     // Erstellen eines Haken-Elementes
-    let haken: HTMLInputElement = document.createElement("input");
+    let haken: HTMLElement = document.createElement("div");
+    //let keinHaken: HTMLElement = document.createElement("div");
 
     //Haken-Typ wird deklariert und ein ID zugewiesen
-    haken.type  = "checkbox";
-    haken.id = "checkbox";
+    haken.className = "far fa-circle";
+   // keinHaken.className = "far fa-circle";
+  
 
     // Haken wird zur neuen Taskbox hinzugefügt
     newDiv?.appendChild(haken);
+
+    haken.addEventListener("click", checkboxClick);
+
+    // Bei Klick auf Kreis wird ein Haken hinzugefügt; erneuter Klick wird der Haken entfernt
+    function checkboxClick (): void {
+        
+        if (haken.getAttribute("class") == "far fa-check-circle") {
+            haken.setAttribute("class", "far fa-circle"); }
+        else {
+            haken.setAttribute("class", "far fa-check-circle"); 
+    }    
+    }
     
     // Erstellen eines Delete-Buttons
-    let deleteButton: HTMLElement = document.createElement("button");
+    let deleteButton: HTMLElement = document.createElement("div");
 
     // dem Delete-Button wird eine Klasse zugewiesen, gestalterische Bearbeitung nun in CSS möglich
-    deleteButton.className = "fas fa-times";
-
+    deleteButton.className = "fas fa-trash";
+    
     // Klickevent für wenn der Delete-Button gedrückt wird
     deleteButton.addEventListener("click", deleteTaskbox);
 
