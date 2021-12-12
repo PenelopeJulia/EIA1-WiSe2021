@@ -108,6 +108,7 @@ function addNewTask (): void {
 
 }
 
+// Bei Klick auf Entertaste wird die addNewTask Funktion ausgelöst = Hinzufügen neuer Taskbox mit Input-Value
 document.addEventListener("keydown", function (event: KeyboardEvent): void { 
     if (event.keyCode == 13) {
        addNewTask();
