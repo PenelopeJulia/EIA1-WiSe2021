@@ -24,6 +24,9 @@ document.addEventListener("keydown", (event: KeyboardEvent): void => {
             if (document.querySelector("input").value != "") { addNewTask(); document.querySelector("input").value = ""; } 
             else {alert("Add your new task!"); }}});
 
+// Funktion für offene Tasks 
+
+// Tasks erledigt Funktion erstellen
 
 
 //Funktion, die bei Klick auf Plus-Button neues InputText-Element ans Div(addBoxDiv) hängt
@@ -66,17 +69,22 @@ function addNewTask (): void {
 
     // Bei Klick auf Kreis wird ein Haken hinzugefügt; erneuter Klick wird der Haken entfernt
     function checkboxClick (): void {
-        open--;
-        done++;
-        document.querySelector("#tasksOpen").innerHTML = String( "open: " + open);
-        document.querySelector("#tasksDone").innerHTML = String( "done: " + done);
+    
         
         if (haken.getAttribute("class") == "far fa-check-circle") {
             haken.setAttribute("class", "far fa-circle");
-
+            open++;
+            done--;
+            document.querySelector("#tasksOpen").innerHTML = String( "open: " + open);
+            document.querySelector("#tasksDone").innerHTML = String( "done: " + done);
          }
         else {
-            haken.setAttribute("class", "far fa-check-circle"); }    
+            haken.setAttribute("class", "far fa-check-circle"); 
+            open--;
+            done++;
+            document.querySelector("#tasksOpen").innerHTML = String( "open: " + open);
+            document.querySelector("#tasksDone").innerHTML = String( "done: " + done);
+        }    
     }
     
     // Erstellen eines Delete-Buttons

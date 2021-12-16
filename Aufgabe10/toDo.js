@@ -24,6 +24,8 @@ var toDoList;
             }
         }
     });
+    // Funktion für offene Tasks 
+    // Tasks erledigt Funktion erstellen
     //Funktion, die bei Klick auf Plus-Button neues InputText-Element ans Div(addBoxDiv) hängt
     function addNewTask() {
         // Counter für Taskboxs in total
@@ -51,15 +53,19 @@ var toDoList;
         document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
         // Bei Klick auf Kreis wird ein Haken hinzugefügt; erneuter Klick wird der Haken entfernt
         function checkboxClick() {
-            open--;
-            done++;
-            document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
-            document.querySelector("#tasksDone").innerHTML = String("done: " + done);
             if (haken.getAttribute("class") == "far fa-check-circle") {
                 haken.setAttribute("class", "far fa-circle");
+                open++;
+                done--;
+                document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
+                document.querySelector("#tasksDone").innerHTML = String("done: " + done);
             }
             else {
                 haken.setAttribute("class", "far fa-check-circle");
+                open--;
+                done++;
+                document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
+                document.querySelector("#tasksDone").innerHTML = String("done: " + done);
             }
         }
         // Erstellen eines Delete-Buttons
