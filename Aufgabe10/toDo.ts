@@ -100,14 +100,25 @@ function addNewTask (): void {
     function deleteTaskbox (): void {
 
         //neues newDiv-Kinderelement wird bei Klick auf den Delete-Button vom Elternelement entfernt
-        newDiv.parentElement.removeChild(newDiv);
+            newDiv.parentElement.removeChild(newDiv);
+
+            //Counter für wenn der Delete-Button gedrückt wird, die Total-Number - 1 ist
+            total--;
+            document.querySelector("#tasksInTotal").innerHTML = String( "total: " + total);
+
+            if (haken.getAttribute("class") == "far fa-check-circle") {
+            open == open;
+            done--;
+            document.querySelector("#tasksOpen").innerHTML = String( "open: " + open);
+            document.querySelector("#tasksDone").innerHTML = String( "done: " + done);
+        }    
+            if (haken.getAttribute("class") == "far fa-circle") {
+            done == done;
+            open--;
+            document.querySelector("#tasksOpen").innerHTML = String( "open: " + open);
+            document.querySelector("#tasksDone").innerHTML = String( "done: " + done);
+        }    
         
-        //Counter für wenn der Delete-Button gedrückt wird, die Total-Number - 1 ist
-        total--;
-        done--;
-        document.querySelector("#tasksInTotal").innerHTML = String( "total: " + total);
-        document.querySelector("#tasksDone").innerHTML = String( "done: " + done);
-        document.querySelector("#tasksOpen").innerHTML = String( "open: " + open);
     }
 
       // Reset To-Do-List bei Klick auf F1
@@ -115,6 +126,7 @@ function addNewTask (): void {
         if (event.keyCode == 112) {
             deleteTaskbox();
             input.value = "";
+
         }
     });
 

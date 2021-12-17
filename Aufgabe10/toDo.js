@@ -80,10 +80,19 @@ var toDoList;
             newDiv.parentElement.removeChild(newDiv);
             //Counter für wenn der Delete-Button gedrückt wird, die Total-Number - 1 ist
             total--;
-            done--;
             document.querySelector("#tasksInTotal").innerHTML = String("total: " + total);
-            document.querySelector("#tasksDone").innerHTML = String("done: " + done);
-            document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
+            if (haken.getAttribute("class") == "far fa-check-circle") {
+                open == open;
+                done--;
+                document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
+                document.querySelector("#tasksDone").innerHTML = String("done: " + done);
+            }
+            if (haken.getAttribute("class") == "far fa-circle") {
+                done == done;
+                open--;
+                document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
+                document.querySelector("#tasksDone").innerHTML = String("done: " + done);
+            }
         }
         // Reset To-Do-List bei Klick auf F1
         document.addEventListener("keyup", function (event) {
