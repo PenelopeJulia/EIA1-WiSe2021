@@ -188,13 +188,20 @@ namespace toDoList {
             }, 
             150); //
     }
+
+    //Klick-Event bei Klick auf Mikro-Icon
     document.querySelector("#mikro").addEventListener("click", function (): void {
+
        if (mikro.getAttribute("style") == "color: #af331d") {
+           //Bei zweitem Klick wird Sprachsteuerung gestoppt
            artyom.fatality();
+           //Icon-Farbe orange
            mikro.setAttribute("style" , "color: #e4842a");
 
        } else {
+           //Bei erstem Klick wird Sprachsteuerung gestartet
            startContinuousArtyom();
+           //Icon-Farbe rot
            mikro.setAttribute("style", "color: #af331d");
        }
    }); 

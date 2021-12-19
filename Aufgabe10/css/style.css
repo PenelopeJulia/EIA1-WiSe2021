@@ -34,7 +34,7 @@ margin-left: 22px;
 
 #info {
     position: absolute;
-    margin-top: 9px;
+    margin-top: 17px;
     margin-left: -78px;
     width: 375px;
 }
@@ -45,7 +45,7 @@ margin-left: 22px;
     height: 460px;
     position: absolute;
     margin:0;
-    top: 30%;
+    top: 35%;
     left:51.89%;
     margin-right:-40%;
     transform: translate(-50%,-50%); 
@@ -55,7 +55,7 @@ margin-left: 22px;
 .taskbox {
     position: absolute;
     margin-left: 10%;
-    top: 230px;
+    top: 240px;
     left: -60px;
 }
 
