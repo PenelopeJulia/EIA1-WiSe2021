@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aufgabe 10: To-Do-Liste</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <script src="toDo.js" defer></script>
+    <script src="/script/toDo.js" defer></script>
+    <script src="/script/artyom.window.min.js" defer></script>
 </head>
 <body>
 <div class="toDoList">
@@ -15,11 +16,15 @@
     <h1>ToDo App</h1>
     <h4> <span id="tasksInTotal"> total: 0 </span> 
         <span id="tasksOpen"> open: 0  </span> 
-        <span id="tasksDone"> done: 0  </span> </h4>
+        <span id="tasksDone"> done: 0  </span> <br>
+        <span id="info"> Sag: "Neue Aufgabe ..." und dann warte einen Moment :)</span>
+</h4>
+    
 
 <div class="taskbox" id="addTaskBox">
 
     <input type="text" id="textfield" placeholder="" name="fname">
+    <i id="mikro" class="fas fa-microphone-alt"></i>
    
 </div>
 

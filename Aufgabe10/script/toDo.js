@@ -55,15 +55,17 @@ var toDoList;
         function checkboxClick() {
             if (haken.getAttribute("class") == "far fa-check-circle") {
                 haken.setAttribute("class", "far fa-circle");
-                open++;
-                done--;
+                // Bei zweitem Klick wird erledgites Task wieder in ein unerledigtes Task umgewandelt
+                open++; //open zäht wieder eins nahch oben
+                done--; //done zählt wieder ein nach unten
                 document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
                 document.querySelector("#tasksDone").innerHTML = String("done: " + done);
             }
+            // Bei erstem Klick wird Task abgehakt
             else {
                 haken.setAttribute("class", "far fa-check-circle");
-                open--;
-                done++;
+                open--; // eins nach unten gezählt
+                done++; // eins nach oben gezählt
                 document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
                 document.querySelector("#tasksDone").innerHTML = String("done: " + done);
             }
@@ -82,14 +84,14 @@ var toDoList;
             total--;
             document.querySelector("#tasksInTotal").innerHTML = String("total: " + total);
             if (haken.getAttribute("class") == "far fa-check-circle") {
-                open == open;
-                done--;
+                open == open; // open bleibt gleich
+                done--; // done zählt eins nach unten, da diese erledigte aufgabe gelöscht wurde
                 document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
                 document.querySelector("#tasksDone").innerHTML = String("done: " + done);
             }
             if (haken.getAttribute("class") == "far fa-circle") {
-                done == done;
-                open--;
+                done == done; // done bleibt gleich, weil die gelöschte Aufgabe unerledigt war
+                open--; // unerledigte aufgabe wurde gelöscht, daher zählt open eins nach unten
                 document.querySelector("#tasksOpen").innerHTML = String("open: " + open);
                 document.querySelector("#tasksDone").innerHTML = String("done: " + done);
             }
@@ -105,6 +107,53 @@ var toDoList;
         newDiv === null || newDiv === void 0 ? void 0 : newDiv.appendChild(deleteButton);
         addTaskBox === null || addTaskBox === void 0 ? void 0 : addTaskBox.appendChild(newDiv);
     }
+    //Mikro-Icon in TS deklarieren, um mit dieser arbeiten zu können
+    var mikro = document.querySelector(".fa-microphone-alt");
+    window.addEventListener("load", function () {
+        var artyom = new Artyom();
+        // addCommands; so ähnlich wie ein Objekt, in dem die Parameer in einem Array oder einzelnen Kommando ausgegeben werden; 
+        // Durch die Parameter in addCommands wird die Spracheingabe überhaupt möglich
+        artyom.addCommands({
+            //Bei Klick auf das Mikro muss der Nutzer "Neue Aufgabe" sagen und danach die neue Aufgabe erwähnen z.B. Putzen => Neue Aufgabe Putzen
+            //das *-Zeichen ist ein Platzhalter (Wildcard) für die individuelle Spracheingabe des Nutzers
+            indexes: ["Neue Aufgabe *"],
+            // smart: true =>  denn wir benutzen wildcards; Artyom erkennt ohne true keine Wildcards
+            smart: true,
+            // wird "Neue AUfgabe" gesagt, wird die funktion unter "action" getriggert
+            action: function (i, wildcard) {
+                // Spracheingabe wird als input.value gespeichert und der Funktion addNewTask übergegeben, so dass es der neuen Taskbox angehängt werden kann
+                input.value = wildcard;
+                addNewTask();
+                document.querySelector("input").value = "";
+                console.log("Neue Aufgabe wird erstellt: " + wildcard);
+            }
+        });
+        // fucntion startContinousArtyom
+        function startContinuousArtyom() {
+            artyom.fatality();
+            setTimeout(function () {
+                // Objekt mit verschiedenen Parametern, die die Sprachsteuerung mit unterschiedlichen Eigenschaften ausstattet
+                artyom.initialize({
+                    lang: "de-DE",
+                    continuous: true,
+                    listen: true,
+                    interimResults: true,
+                    debug: true // es wird alles in der Konsole ausgegeben
+                }).then(function () {
+                    console.log("Ready!");
+                });
+            }, 150); //
+        }
+        document.querySelector("#mikro").addEventListener("click", function () {
+            if (mikro.getAttribute("style") == "color: #af331d") {
+                artyom.fatality();
+                mikro.setAttribute("style", "color: #e4842a");
+            }
+            else {
+                startContinuousArtyom();
+                mikro.setAttribute("style", "color: #af331d");
+            }
+        });
+    });
 })(toDoList || (toDoList = {}));
-//document.querySelector("#toDoCounter").innerHTML = String(total + " in total");
 //# sourceMappingURL=toDo.js.map
