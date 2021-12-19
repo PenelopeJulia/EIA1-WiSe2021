@@ -15,6 +15,9 @@ namespace toDoList {
     
     // Input-Element in TS deklarieren
     let input: HTMLInputElement = document.querySelector("#textfield");
+
+    // Bei Öffnen der Seite ist Aufnhamen noch deaktiviert
+    let microphone: boolean = false;
     
     newDiv.textContent = "";
     
@@ -192,17 +195,19 @@ namespace toDoList {
     //Klick-Event bei Klick auf Mikro-Icon
     document.querySelector("#mikro").addEventListener("click", function (): void {
 
-       if (mikro.getAttribute("style") == "color: #af331d") {
-           //Bei zweitem Klick wird Sprachsteuerung gestoppt
-           artyom.fatality();
-           //Icon-Farbe orange
-           mikro.setAttribute("style" , "color: #e4842a");
-
-       } else {
+       if (!microphone) {
            //Bei erstem Klick wird Sprachsteuerung gestartet
            startContinuousArtyom();
            //Icon-Farbe rot
            mikro.setAttribute("style", "color: #af331d");
+           microphone = true;
+
+       } else {
+           //Bei zweitem Klick wird Sprachsteuerung gestoppt
+           artyom.fatality();
+           microphone = false;
+           //Icon-Farbe orange
+           mikro.setAttribute("style" , "color: #e4842a");
        }
    }); 
        

@@ -10,6 +10,8 @@ var toDoList;
     var newDiv = document.createElement("div");
     // Input-Element in TS deklarieren
     var input = document.querySelector("#textfield");
+    // Bei Öffnen der Seite ist Aufnhamen noch deaktiviert
+    var microphone = false;
     newDiv.textContent = "";
     // newDiv wird an das Eltern-Element addTaskBox gehängt
     addTaskBox.appendChild(newDiv);
@@ -146,17 +148,19 @@ var toDoList;
         }
         //Klick-Event bei Klick auf Mikro-Icon
         document.querySelector("#mikro").addEventListener("click", function () {
-            if (mikro.getAttribute("style") == "color: #af331d") {
-                //Bei zweitem Klick wird Sprachsteuerung gestoppt
-                artyom.fatality();
-                //Icon-Farbe orange
-                mikro.setAttribute("style", "color: #e4842a");
-            }
-            else {
+            if (!microphone) {
                 //Bei erstem Klick wird Sprachsteuerung gestartet
                 startContinuousArtyom();
                 //Icon-Farbe rot
                 mikro.setAttribute("style", "color: #af331d");
+                microphone = true;
+            }
+            else {
+                //Bei zweitem Klick wird Sprachsteuerung gestoppt
+                artyom.fatality();
+                microphone = false;
+                //Icon-Farbe orange
+                mikro.setAttribute("style", "color: #e4842a");
             }
         });
     });
