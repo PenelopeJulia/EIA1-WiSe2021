@@ -198,13 +198,14 @@ namespace toDoList {
        if (!microphone) {
            //Bei erstem Klick wird Sprachsteuerung gestartet
            startContinuousArtyom();
+           // Sprachsteuerung an, daher Bedingung true
+           microphone = true;
            //Icon-Farbe rot
            mikro.setAttribute("style", "color: #af331d");
-           microphone = true;
-
        } else {
            //Bei zweitem Klick wird Sprachsteuerung gestoppt
            artyom.fatality();
+           // Sprachsteuerung wurde gestoppt, daher ist die Bedingung, dass Mikro an ist falsch
            microphone = false;
            //Icon-Farbe orange
            mikro.setAttribute("style" , "color: #e4842a");
